@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>细胞探究课 | 酵母菌的呼吸作用</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="./src/styles.css">
+</head>
+<body>
+  <div id="app">
+    <!-- 加载界面 -->
+    <div id="loading-screen" class="screen active">
+      <div class="loading-content">
+        <div class="microscope-icon">🔬</div>
+        <h1>细胞探究实验室</h1>
+        <p class="subtitle">酵母菌的呼吸作用</p>
+        <div class="loading-bar">
+          <div class="loading-progress"></div>
+        </div>
+        <button id="start-btn" class="btn-primary hidden">开始探索</button>
+      </div>
+      <div class="floating-elements">
+        <span class="float-item">🧫</span>
+        <span class="float-item">🧪</span>
+        <span class="float-item">⚗️</span>
+        <span class="float-item">🔍</span>
+      </div>
+    </div>
+
+    <!-- 主课程界面 -->
+    <div id="main-screen" class="screen">
+      <!-- 顶部进度条 -->
+      <header class="course-header">
+        <div class="progress-container">
+          <div class="progress-bar">
+            <div class="progress-fill" id="progress-fill"></div>
+          </div>
+          <div class="progress-labels">
+            <span class="progress-label active" data-module="1">问题聚焦</span>
+            <span class="progress-label" data-module="2">实验探究</span>
+            <span class="progress-label" data-module="3">得出结论</span>
+            <span class="progress-label" data-module="4">迁移应用</span>
+          </div>
+        </div>
+        <div class="science-question" id="science-question">
+          <span class="question-icon">❓</span>
+          <span class="question-text">温度是否会影响酵母菌呼吸作用的速度？</span>
+        </div>
+      </header>
+
+      <!-- 主内容区 -->
+      <main class="course-content">
+        <!-- 左侧：AI对话区 -->
+        <section class="chat-section">
+          <div class="chat-container" id="chat-container">
+            <!-- 消息会动态添加到这里 -->
+          </div>
+          <div class="input-area" id="input-area">
+            <div class="text-input-wrapper">
+              <input type="text" id="user-input" placeholder="输入你的想法..." />
+              <button id="send-btn" class="send-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13"/>
+                </svg>
+              </button>
+            </div>
+            <div class="choice-buttons" id="choice-buttons">
+              <!-- 选择题按钮会动态添加 -->
+            </div>
+          </div>
+        </section>
+
+        <!-- 右侧：实验台/工具箱 -->
+        <section class="lab-section" id="lab-section">
+          <div class="lab-header">
+            <h2>🧪 实验台</h2>
+            <div class="lab-status" id="lab-status">准备中...</div>
+          </div>
+          <div class="lab-workspace" id="lab-workspace">
+            <!-- 实验工具和可视化会动态添加 -->
+            <div class="lab-placeholder">
+              <div class="placeholder-icon">🔬</div>
+              <p>实验工具将在这里显示</p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- 结束界面 -->
+    <div id="end-screen" class="screen">
+      <div class="end-content">
+        <div class="completion-badge">🏆</div>
+        <h1>恭喜完成探究！</h1>
+        <div class="summary-card" id="summary-card">
+          <!-- 总结内容 -->
+        </div>
+        <button id="restart-btn" class="btn-primary">再来一次</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./src/app.js"></script>
+</body>
+</html>
